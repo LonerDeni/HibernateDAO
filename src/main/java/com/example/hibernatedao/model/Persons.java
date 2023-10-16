@@ -16,13 +16,15 @@ import javax.persistence.*;
 @IdClass(PersonsDateId.class)
 public class Persons {
     @Id
+    @Column(nullable = false)
     private String name;
 
     @Id
-    @Column(name = "surname")
+    @Column(name = "surname",nullable = false)
     private String surName;
 
     @Id
+    @Column(nullable = false)
     private int age;
 
     @Column(name = "phone_number")
