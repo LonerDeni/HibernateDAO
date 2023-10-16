@@ -20,7 +20,7 @@ public class Controller {
     }
 
     @GetMapping("/persons/by-city")
-    public List<Persons> getProduct(@RequestParam @RequestBody String city) {
+    public List<Persons> getPersons(@RequestParam @RequestBody String city) {
         return personRepository.getPersonsByCity(city);
     }
 }
