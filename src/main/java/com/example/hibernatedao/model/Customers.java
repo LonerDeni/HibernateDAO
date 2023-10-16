@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Data
@@ -13,21 +15,22 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Table(schema = "netology")
-@IdClass(PersonsDateId.class)
-public class Persons {
-    @Id
-    private String name;
+public class Customers {
 
     @Id
+    @GeneratedValue
+    private int id;
+
+    private String name;
+
     @Column(name = "surname")
     private String surName;
 
-    @Id
     private int age;
 
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "city_of_living")
-    private String cityOfLiving;
+    @OneToMany
+    private List<Customers> orders;
 }
