@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -19,7 +18,7 @@ public class Customers {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
 
     private String name;
 
@@ -31,6 +30,8 @@ public class Customers {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @OneToMany
-    private List<Customers> orders;
+    @OneToMany()
+    @JoinColumn(name = "customer_id")
+    private List<Orders> orders;
+
 }

@@ -22,18 +22,11 @@ public class Orders {
 
     private Date date;
 
-    //@ManyToOne()
-////    @JoinColumn(name="customer_id", nullable = false)
-    //private Customers customers;
-
-    @Column(name = "customer_id")
-    private Long customerId;
-
     @Column(name = "product_name")
     private String productName;
 
     private int amount;
-
-//    @ManyToMany
-//    private List<Customers> customers;
+    @ManyToOne()
+    @JoinColumn(name = "customer_id")
+    private Customers customers;
 }

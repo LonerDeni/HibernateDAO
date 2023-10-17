@@ -1,6 +1,7 @@
 package com.example.hibernatedao.controller;
 
 import com.example.hibernatedao.model.Customers;
+import com.example.hibernatedao.model.Orders;
 import com.example.hibernatedao.repository.PersonRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,7 @@ public class Controller {
     }
 
     @GetMapping("/products/fetch-product")
-    public List<Customers> getProduct(@RequestParam @RequestBody String name) {
+    public Customers getProduct(@RequestParam @RequestBody String name) {
         return personRepository.getProduct(name);
     }
 }
