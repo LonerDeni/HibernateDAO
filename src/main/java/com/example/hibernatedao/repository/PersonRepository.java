@@ -1,16 +1,11 @@
 package com.example.hibernatedao.repository;
 
 import com.example.hibernatedao.model.Customers;
-import com.example.hibernatedao.model.Orders;
-import org.aspectj.weaver.ast.Or;
-import org.hibernate.query.Query;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import java.util.List;
 
 @Repository
 public class PersonRepository {
